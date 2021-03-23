@@ -1,0 +1,95 @@
+﻿@model KTPBlockChainClient.Models.KTP
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Tambah KTP</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Submit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NIK" class="control-label">NIK</label>
+                <input asp-for="NIK" class="form-control" />
+                <span asp-validation-for="NIK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nama" class="control-label">Nama</label>
+                <input asp-for="Nama" class="form-control" />
+                <span asp-validation-for="Nama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TempatLahir" class="control-label">Tempat Lahir</label>
+                <input asp-for="TempatLahir" class="form-control" />
+                <span asp-validation-for="TempatLahir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TanggalLahir" class="control-label">Tanggal Lahir</label>
+                @Html.TextBoxFor(m => m.TanggalLahir, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                <span asp-validation-for="TanggalLahir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JenisKelamin" class="control-label">Jenis Kelamin</label>
+                <select id="kelamin" asp-for="JenisKelamin" class="form-control">
+                    <option value="LAKI-LAKI">LAKI-LAKI</option>
+                    <option value="PEREMPUAN">PEREMPUAN</option>
+                </select>
+                <span asp-validation-for="JenisKelamin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alamat" class="control-label">Alamat</label>
+                <input asp-for="Alamat" class="form-control" />
+                <span asp-validation-for="Alamat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agama" class="control-label">Agama</label>
+                <select id="agama" asp-for="Agama" class="form-control">
+                    <option value="ISLAM">ISLAM</option>
+                    <option value="KRISTEN PROTESTAN">KRISTEN PROTESTAN</option>
+                    <option value="KATOLIK">KATOLIK</option>
+                    <option value="HINDU">HINDU</option>
+                    <option value="BUDDHA">BUDDHA</option>
+                    <option value="KONG HU CU">KONG HU CU</option>
+                </select>
+                <span asp-validation-for="Agama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusKawin" class="control-label">Status Perkawinan</label>
+                <select id="kawin" asp-for="StatusKawin" class="form-control">
+                    <option value="KAWIN">KAWIN</option>
+                    <option value="BELUM KAWIN">BELUM KAWIN</option>
+                </select>
+                <span asp-validation-for="StatusKawin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pekerjaan" class="control-label">Pekerjaan</label>
+                <input asp-for="Pekerjaan" class="form-control" />
+                <span asp-validation-for="Pekerjaan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kewarganegaraan" class="control-label">Kewarganegaraan</label>
+                <input asp-for="Kewarganegaraan" class="form-control" />
+                <span asp-validation-for="Kewarganegaraan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BerlakuHingga" class="control-label">Berlaku Hingga</label>
+                @Html.TextBoxFor(m => m.BerlakuHingga, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date" })
+                <span asp-validation-for="BerlakuHingga" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label">Foto</label>
+                <input type="file" onchange="document.getElementById('FileName').value = this.value;" asp-for="Foto" class="form-control" />
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

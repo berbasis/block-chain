@@ -1,0 +1,81 @@
+﻿@model KTPBlockChainClient.Models.KTP
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4>Detail KTP</h4>
+
+<div>
+    <hr />
+    <center><img src="~/spongebob/@Html.DisplayFor(model => model.Foto)" style="width: 200px; height: 200px" alt="Foto"/></center>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            NIK
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NIK)
+        </dd>
+        <dt class="col-sm-2">
+            Nama
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nama)
+        </dd>
+        <dt class="col-sm-2">
+            Tempat Lahir
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TempatLahir)
+        </dd>
+        <dt class="col-sm-2">
+            Tanggal Lahir
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TanggalLahir)
+        </dd>
+        <dt class="col-sm-2">
+            Jenis Kelamin
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.JenisKelamin)
+        </dd>
+        <dt class="col-sm-2">
+            Alamat
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Alamat)
+        </dd>
+        <dt class="col-sm-2">
+            Agama
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Agama)
+        </dd>
+        <dt class="col-sm-2">
+            Status Perkawinan
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusKawin)
+        </dd>
+        <dt class="col-sm-2">
+            Pekerjaan
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pekerjaan)
+        </dd>
+        <dt class="col-sm-2">
+            Kewarganegaraan
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kewarganegaraan)
+        </dd>
+        <dt class="col-sm-2">
+            Berlaku Hingga
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BerlakuHingga)
+        </dd>
+    </dl>
+</div>

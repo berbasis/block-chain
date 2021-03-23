@@ -1,0 +1,47 @@
+﻿@model IEnumerable<KTPBlockChainClient.Models.KTP>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NIK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nama)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody> 
+@foreach (var item in Model) {
+        <tr>
+            <th>
+                @{int id = @item.ID - 1;}
+                @id
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.NIK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nama)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@id">Detail</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br/>
+<center>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Tambah KTP</a>
+    </p>
+</center>
